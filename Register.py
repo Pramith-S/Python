@@ -1,0 +1,2 @@
+print(' Cash Register')
+print('***************')
