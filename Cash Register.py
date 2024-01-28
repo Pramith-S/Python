@@ -1,9 +1,12 @@
+# Simple cash register program for grocery stores or restaurants made using python
 print(' CASH REGISTER')
 print('****************')
+# Add your own Products/items by adding your own list of Products/items or manipulating the existing ones
 section=['Dairy','Vegetables','Fruits']
 dairy=['Milk','Curd','Butter','Cheese']
 veg=['Potato','Brinjal','Cabbage','Onion','Capsicum(Bell pepper)','Carrot']
 fruit=['Apple','Orange','Banana','Lemon','Grapes','Mango']
+# Add your own Products/items value by adding your own list of Products/items value or manipulating the existing ones
 dairy_value=[25,25,80,100]
 veg_value=[30,50,40,20,60,80]
 fruit_value=[150,120,40,300,500,600]
@@ -15,9 +18,9 @@ product_list=[]
 global sorted_product_amount
 sorted_product_amount={}
 def table(product,product_value):
-    print('\nSr.No\t\tProduct\t\tPrice(Per unit.)')
+    print('\nSr.No\t\tProduct\t\tPrice(Per unit.)') # Manipulate the headings according to your need
     for i in range(len(dairy)):
-        print('  {}\t\t {}\t\t   Rs.{}'.format(i+1,product[i],product_value[i]))
+        print('  {}\t\t {}\t\t   Rs.{}'.format(i+1,product[i],product_value[i])) # Add your own currency symbol(Here i've used Rs.)
 def console(sub_section):
     while True:
         print('\nEnter the serial number of the product or press \'ENTER\' to exit section:')
@@ -36,7 +39,7 @@ def console(sub_section):
 def process(product,product_value,product_quantity):
     while True:
         p=0
-        if product[(int(f)-1)]=='Milk' or product[(int(f)-1)]=='Curd':
+        if product[(int(f)-1)]=='Milk' or product[(int(f)-1)]=='Curd': # Manipulate or add if statements for different units with quantities
             p='litres'
         else:
             p='Kg'
@@ -103,12 +106,12 @@ while True:
             n=n+1
             k='\t'
             p='kg'
-            if i=='Milk' or i=='Curd':
+            if i=='Milk' or i=='Curd': # Manipulate or add if statements for different units with quantities
                 p='litres'
                 k=''
             else:
                 p='Kg'
-            print('  {}\t\t{}\t\t  {}{}\t\t{}Rs.{}'.format(n,i,product_quantity[i],p,k,j))
+            print('  {}\t\t{}\t\t  {}{}\t\t{}Rs.{}'.format(n,i,product_quantity[i],p,k,j)) # Add your own currency symbol(Here i've used Rs.)
         print('\nTo add more products enter 1\nTo delete products enter 2\nTo print bill press \'ENTER\'')
         f=input()
         if f!='' and f.isdigit()==False:
@@ -154,10 +157,10 @@ for i in product_list:
     k='\t'
     n=n+1
     t+=i[1]
-    if i[0]=='Milk' or i[0]=='Curd':
+    if i[0]=='Milk' or i[0]=='Curd': # Manipulate or add if statements for different units with quantities
         p='litres'
         k=''
     else:
         p='Kg'
-    print('  {}\t\t{}\t\t  {}{}\t\t{}Rs.{}'.format(n,i[0],product_quantity[(i[0])],p,k,i[1]))
+    print('  {}\t\t{}\t\t  {}{}\t\t{}Rs.{}'.format(n,i[0],product_quantity[(i[0])],p,k,i[1])) # Add your own currency symbol(Here i've used Rs.)
 print('\nTotal Amount: Rs.{}'.format(t))
