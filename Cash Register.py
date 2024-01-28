@@ -101,12 +101,14 @@ while True:
         n=0
         for i,j in sorted_product_amount.items():
             n=n+1
+            k='\t'
             p='kg'
             if i=='Milk' or i=='Curd':
                 p='litres'
+                k=''
             else:
                 p='Kg'
-            print('  {}\t\t{}\t\t  {}{}\t\t\tRs.{}'.format(n,i,product_quantity[i],p,j))
+            print('  {}\t\t{}\t\t  {}{}\t\t{}Rs.{}'.format(n,i,product_quantity[i],p,k,j))
         print('\nTo add more products enter 1\nTo delete products enter 2\nTo print bill press \'ENTER\'')
         f=input()
         if f!='' and f.isdigit()==False:
@@ -149,11 +151,13 @@ print('\nSr.No.\t\tProduct\t\tQuantity\t\tAmount')
 n=0
 for i in product_list:
     p='kg'
+    k='\t'
     n=n+1
     t+=i[1]
-    if i=='Milk' or i=='Curd':
+    if i[0]=='Milk' or i[0]=='Curd':
         p='litres'
+        k=''
     else:
         p='Kg'
-    print('  {}\t\t{}\t\t  {}{}\t\t\tRs.{}'.format(n,i[0],product_quantity[(i[0])],p,i[1]))
+    print('  {}\t\t{}\t\t  {}{}\t\t{}Rs.{}'.format(n,i[0],product_quantity[(i[0])],p,k,i[1]))
 print('\nTotal Amount: Rs.{}'.format(t))
