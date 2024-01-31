@@ -5,7 +5,7 @@ while True:
     a=input()
     if a=='1':
         while True:
-            with open('userinfo.txt','r') as info: # Create .txt file with the same name or change the name of the .txt file according to the one in your system
+            with open('userinfo.txt','r') as info: # (IMPORTANT): Create .txt file with the same name or change the name of the .txt file according to the one in your system
                 user_details=info.readlines()
             print('Enter your Username:')
             global username
@@ -49,3 +49,4 @@ while True:
         with open('userinfo.txt','w') as info:
             for i in user_details:
                 info.write(i)
+        continue
