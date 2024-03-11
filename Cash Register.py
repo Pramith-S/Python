@@ -19,7 +19,7 @@ global sorted_product_amount
 sorted_product_amount={}
 def table(product,product_value):
     print('\nSr.No\t\tProduct\t\tPrice(Per unit.)') # Manipulate the headings according to your need
-    for i in range(len(dairy)):
+    for i in range(len(product)):
         print('  {}\t\t {}\t\t   Rs.{}'.format(i+1,product[i],product_value[i])) # Add your own currency symbol(Here i've used Rs.)
 def console(sub_section):
     while True:
